@@ -1,7 +1,14 @@
 <script setup>
+
 import RouterLink from '@/components/RouterLink.vue';
 import Heading from '@/components/UI/Heading.vue';
 import { FormKit } from '@formkit/vue';
+
+const handleSubmit = (data) =>{
+    console.log(data)
+};
+
+
 
 </script>
 
@@ -15,24 +22,24 @@ import { FormKit } from '@formkit/vue';
     <div class="mx-auto mt-10 bg-white shadow">
         <div class="mx-auto md:w-2/3 py-20 px-6">
             <FormKit type="form"
-            
-            :actions="false"
+            @submit="handleSubmit"
+          
+            submit-label="Add Customer"
             >
-                <FormKit type="text" label="First name" placeholder="Customer's first name" validation="required"
+                <FormKit type="text" label="First name" name="first_name" placeholder="Customer's first name" validation="required"
                     validation-visibility="live" />
-                <FormKit type="text" label="Last name" placeholder="Customer's last name" validation="required"
+                <FormKit type="text" label="Last name" name="last_name" placeholder="Customer's last name" validation="required"
                     validation-visibility="live" />
-                <FormKit type="email" label="E-mail" placeholder="customer@email.com" validation="required|email"
+                <FormKit type="email" label="E-mail" name="email" placeholder="customer@email.com" validation="required|email"
                     validation-visibility="live" />
-                <FormKit type="text" label="Phone" placeholder=" phone: XXX-XXX-XXXX"
+                <FormKit type="text" label="Phone" name="phone" placeholder=" phone: XXX-XXX-XXXX"
                     validation="?matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
                     :validation-messages="{ matches: 'Please, enter a valid phone number. ' }" />
-                    <FormKit type="text" label="Work location" placeholder="Customer's work location" 
+                    <FormKit type="text" label="Work location" name="work-location" placeholder="Customer's work location" 
                      />
-                    <FormKit type="text" label="Position" placeholder="Customers's position" 
+                    <FormKit type="text" label="Position" name="position" placeholder="Customers's position" 
                     />
-                    <FormKit type="submit" label="Add Customers" 
-                     />
+                    
             </FormKit>
         </div>
     </div>
