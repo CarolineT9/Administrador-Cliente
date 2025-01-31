@@ -5,9 +5,9 @@ import Heading from '@/components/UI/Heading.vue';
 <template>
   <div>
     <div class="flex justify-end">
-      <RouterLink to="new-client">Register account</RouterLink>
+      <RouterLink to="new-customers">Register customer</RouterLink>
     </div>
-    <Heading>Client</Heading>
+    <Heading>Customers</Heading>
   </div>
 
 </template>

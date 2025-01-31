@@ -1,4 +1,4 @@
-const config={
-    theme: ' genesis'
+const config ={
+    theme: 'genesis'
 }
-export default config
+export default config;
