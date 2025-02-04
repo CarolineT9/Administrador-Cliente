@@ -1,11 +1,23 @@
 <script setup>
-
+import axios from 'axios';
 import RouterLink from '@/components/RouterLink.vue';
+import { useRoute, useRouter } from 'vue-router';
 import Heading from '@/components/UI/Heading.vue';
 import { FormKit } from '@formkit/vue';
 
+
+const router = useRouter();
+defineProps({
+
+})
+
 const handleSubmit = (data) =>{
-    console.log(data)
+    axios.post('http://localhost:4000/customers', data)
+    .then(response =>{
+        //redirect
+        router.push({name: 'home'})
+    } )
+    .catch(error => console.log(error))
 };
 
 
