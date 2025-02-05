@@ -15,5 +15,8 @@ export default {
     },
     updateCustomerStatus(id, data){
         return api.patch('customers/' + id, data)
+    },
+    deleteCustomer(id){
+        return api.delete('customers/' +  id)
     }
 }

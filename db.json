@@ -1,24 +1,14 @@
 {
   "customers": [
     {
-      "id": "739e",
-      "first_name": "Firstedit",
-      "last_name": "Last",
+      "id": "1e8a",
+      "first_name": "New ",
+      "last_name": "Customer",
       "email": "customer@mail.com",
-      "phone": "111-222-3333",
-      "work_location": "Customer E",
-      "position": "Dev Jr",
-      "status": true
-    },
-    {
-      "id": "2",
-      "first_name": "Teste 2",
-      "last_name": "Last",
-      "email": "customer@mail.com",
-      "phone": "111-222-3333",
-      "work_location": "Teste 2",
-      "position": "Dev Jr",
-      "status": false
+      "phone": "555-666-7777",
+      "work_location": "Work",
+      "position": "Front-end Developer",
+      "status": 1
     }
   ]
 }

@@ -26,6 +26,13 @@ const updatedStatus = ({id, status})=>{
     })
     .catch(error => console.log(error))
 };
+const deleteCustomer = (id) =>{
+    CustomerService.deleteCustomer(id)
+    .then(() =>{
+      customers.value = customers.value.filter(customer => customer.id !== id)
+    })
+    .catch((error) => console.log(error))
+};
 
 </script>
 <template>
@@ -49,6 +56,7 @@ const updatedStatus = ({id, status})=>{
             <tbody class="divide-y divide-gray-200 bg-white">
               <Customer v-for="customer in customers" :key="customer.id" 
               :customer="customer" @update-status="updatedStatus"
+              @delete-customer = 'deleteCustomer'
               />
             </tbody>
           </table>

@@ -6,7 +6,7 @@ const props = defineProps({
     }
     
 })
-defineEmits(['update-status'])
+defineEmits(['update-status', 'delete-customer'])
 const nameCustomer = computed(()=>{
     return props.customer.first_name + " " + props.customer.last_name
 })
@@ -43,7 +43,9 @@ const statusCustomer = computed(() => {
          <RouterLink :to="{name: 'edit-customer', params: {id: customer.id}}"
          class="text-indigo-600 hover:text-indigo-900 mr-5"
          >Edit</RouterLink>
-         <button class="text-red-600 hover:text-red-900">Delete</button>
+         <button class="text-red-600 hover:text-red-900"
+         @click="$event => $emit('delete-customer', customer.id)"
+         >Delete</button>
         </td>
         
     </tr>
