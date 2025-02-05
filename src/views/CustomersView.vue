@@ -17,11 +17,21 @@ onMounted(() => {
     .then(({ data }) => customers.value = data)
     .catch(error => console.log('Data not found'))
 });
+
+const updatedStatus = ({id, status})=>{
+    CustomerService.updateCustomerStatus(id, {status: !status})   
+    .then(() =>{
+      const i = customers.value.findIndex(customer => customer.id === id)
+      customers.value[i].status = !status
+    })
+    .catch(error => console.log(error))
+};
+
 </script>
 <template>
   <div>
     <div class="flex justify-end">
-      <RouterLink to="new-customers">Register customer</RouterLink>
+      <RouterLink to="new-customer">Register customer</RouterLink>
     </div>
     <Heading>Customers list</Heading>
     <div v-if="isCustomer" class="flow-root mx-auto  mt-10 p-5 bg-white shadow">
@@ -38,7 +48,7 @@ onMounted(() => {
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white">
               <Customer v-for="customer in customers" :key="customer.id" 
-              :customer="customer"
+              :customer="customer" @update-status="updatedStatus"
               />
             </tbody>
           </table>
