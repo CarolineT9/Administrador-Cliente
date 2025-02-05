@@ -1,19 +1,24 @@
 {
   "customers": [
     {
-      "id": "8b7a",
-      "first_name": "Caroline",
-      "last_name": "Tavares",
-      "email": "caroltvrs@gmail.com"
+      "id": "739e",
+      "first_name": "First",
+      "last_name": "Last",
+      "email": "customer@mail.com",
+      "phone": "111-222-3333",
+      "work_location": "Customer E",
+      "position": "Dev Jr",
+      "status": 1
     },
     {
-      "id": "e3b9",
-      "first_name": "Macarena",
-      "last_name": "Maca",
-      "email": "macarena@mail.com",
-      "phone": "555-444-3333",
-      "work-location": "Porto Alegre",
-      "position": "Cat family"
+      "id": "2",
+      "first_name": "Teste 2",
+      "last_name": "Last",
+      "email": "customer@mail.com",
+      "phone": "111-222-3333",
+      "work_location": "Teste 2",
+      "position": "Dev Jr",
+      "status": 0
     }
   ]
 }

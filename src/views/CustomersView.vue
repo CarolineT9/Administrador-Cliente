@@ -1,7 +1,9 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue';
-import axios from 'axios'
 import RouterLink from '@/components/RouterLink.vue';
+import CustomerService from '@/services/CustomerService.js'
+
+
 import Heading from '@/components/UI/Heading.vue';
 import Customer from '@/components/Customer.vue';
 
@@ -11,7 +13,7 @@ const isCustomer = computed(() => {
 })
 
 onMounted(() => {
-  axios.get('http://localhost:4000/customers')
+  CustomerService.getCustomers()
     .then(({ data }) => customers.value = data)
     .catch(error => console.log('Data not found'))
 });
@@ -28,9 +30,9 @@ onMounted(() => {
           <table class="min-w-full divide-y divide-gray-300">
             <thead>
               <tr>
-                <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Nombre</th>
-                <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Empresa</th>
-                <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Estado</th>
+                <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Name</th>
+                <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Work Location</th>
+                <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Status</th>
                 <th scope="col" class="p-2 text-left text-sm font-extrabold text-gray-600">Acciones</th>
               </tr>
             </thead>
